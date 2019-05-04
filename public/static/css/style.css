@@ -1,0 +1,119 @@
+*{
+    box-sizing: border-box;
+}
+#wrapper{
+    width: 990px;
+    outline: 1px solid #787274;
+    padding: 10px;
+    margin: 0 auto;
+}
+#header{
+    height: 80px;
+    background-color: rgb(52, 178, 209);
+    margin-bottom: 10px;
+    font-size: 250%;
+    text-align: center;
+}
+#user{
+    background-color: rgb(228, 248, 255);
+    margin-bottom: 5px;
+    text-align: right;
+}
+#top_menu{
+    display: inline-block;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+#top_menu > li{
+    border: 1px solid black;
+    display: inline-block;  
+    position: relative;
+}
+#top_menu > li > a{
+    display: inline-block;
+    padding: 5px 20px; 
+    color: inherit;
+    text-decoration: none; 
+}
+#top_menu > li > a:hover{
+    background-color: #5dbbe7;  
+}
+#top_menu > li:hover > ul{
+    display: block;
+}
+
+.inner_menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+    white-space: nowrap;
+    background-color: rgb(221, 235, 236);;
+}
+.inner_menu > li{
+    border: 1px solid black;
+    display: inline-block;  
+    position: relative;
+}
+.inner_menu > li > a{
+    width: 100%;
+    display: inline-block;
+    padding: 5px 20px; 
+    color: inherit;
+    text-decoration: none;
+  }
+.inner_menu > li > a:hover{
+    background-color: #5dbbe7;  
+}
+
+#sidebar{
+    background-color: rgb(177, 242, 253);
+    margin-bottom: 10px;
+    width: 180px;
+    padding: 10px;
+    float: right;
+    height: 100%
+}
+#sidebar a{
+    text-decoration: none;
+    color: darkblue;
+}
+#categories{
+    list-style: none;
+    padding-left: 0;
+}
+#categories a{
+    color: royalblue;
+}
+#sign-in{
+    margin-top: 5px;
+    background: #eef8ff;
+    text-align: center;
+}
+#sign-in > a{
+    color: black;
+    font-size: small;
+    font-family: Calibri;
+}
+#content{
+    background-color: rgb(249, 253, 249);
+    margin-bottom: 10px;
+    width: 770px;
+    padding: 10px;
+}
+#footer{
+    height:80px;
+    background-color: rgb(135, 136, 139);
+}
+#footer p{
+    padding: 30px;
+    text-align: center;
+    color: aliceblue;
+}
+.clear{
+    clear: both;
+}
