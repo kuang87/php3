@@ -14,7 +14,7 @@
 
 <body>
 <div id="wrapper">
-    <div id="header">Blog</div>
+    <div id="header">Блог</div>
 
         @include('sidebar')
 
