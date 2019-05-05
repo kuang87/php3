@@ -105,6 +105,9 @@
     width: 770px;
     padding: 10px;
 }
+.like{
+    text-align: right;
+}
 #footer{
     height:80px;
     background-color: rgb(135, 136, 139);

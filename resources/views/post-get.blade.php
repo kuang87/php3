@@ -10,5 +10,5 @@
         <li>{{ $post->content }}</li>
     </ul>
     <p>Category: {{ $post->category->name }}</p>
-
-@endsection    
+    <p class="like"><a href="{{BASE_URL. 'posts/' . $post->id . '?like=1'}}">Мне нравится</a></p>
+@endsection
