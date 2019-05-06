@@ -7,6 +7,7 @@ require_once '../config/dotenv.php';
 require_once '../config/database.php';
 require_once '../config/view.php';
 require_once '../config/router.php';
+require_once '../config/container.php';
 
 
 $serverRequest = \GuzzleHttp\Psr7\ServerRequest::fromGlobals();
@@ -17,6 +18,9 @@ if ($action = $matcher->match($serverRequest)){
     foreach ($action->attributes as $name => $attribute){
         $serverRequest = $serverRequest->withAttribute($name, $attribute);
     }
+
+    //var_dump($container);
+    //exit;
 
     $action = new $action->handler;
 

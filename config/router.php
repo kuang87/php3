@@ -12,3 +12,4 @@ $router->get('category.all', '/categories', Aleksandr\Action\CategoryAllAction::
 $router->get('category.get', '/categories/{id}', Aleksandr\Action\CategoryGetAction::class);
 $router->get('sign-up.get', '/sign-up', Aleksandr\Action\SignUpAction::class);
 $router->post('sign-up.post', '/sign-up', Aleksandr\Action\SignUpAction::class);
+$router->get('post.like', '/posts/{id}/like', Aleksandr\Action\PostLikeAction::class);

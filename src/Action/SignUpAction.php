@@ -5,12 +5,20 @@ namespace Aleksandr\Action;
 
 
 use Aleksandr\Hash\Argon2I;
+use Aleksandr\Hash\HashInterface;
 use Aleksandr\Model\User;
 use GuzzleHttp\Psr7\ServerRequest;
 
 class SignUpAction
 {
     protected $errors = [];
+    private $hash;
+
+    public function __construct(HashInterface $hash)
+    {
+        $this->hash = $hash;
+    }
+
     public function __invoke(ServerRequest $request)
     {
         $user_params = $request->getParsedBody() ?? '';
@@ -28,11 +36,10 @@ class SignUpAction
                 $user = new User();
                 $user->name = $user_params['name'];
                 $user->login = $user_params['login'];
-                $user->password = Argon2I::hash($user_params['pass']);
+                $user->password = $this->hash->hash($user_params['pass']);
                 $user->save();
             }
         }
-
         return view('sign-up', ['errors' => $this->errors]);
     }
 }

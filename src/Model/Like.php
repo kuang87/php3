@@ -4,12 +4,9 @@
 namespace Aleksandr\Model;
 
 
-class Like
+use Illuminate\Database\Eloquent\Model;
+
+class Like extends Model
 {
-    public static function postLike($isLike){
-        if ($isLike === '1'){
-            echo 'Like';
-            exit;
-        }
-    }
+    public $timestamps = false;
 }
