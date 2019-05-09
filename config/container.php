@@ -26,6 +26,11 @@ $container->set(\Aleksandr\Hash\HashInterface::class, function (){
 $container->set(\Aleksandr\Action\SignUpAction::class, function () use ($container){
     $hash = $container->get(\Aleksandr\Hash\HashInterface::class);
     $validator = $container->get('validator');
-    $action = new \Aleksandr\Action\SignUpAction($hash, $validator);
-    return $action;
+    return new \Aleksandr\Action\SignUpAction($hash, $validator);
+});
+
+$container->set(\Aleksandr\Action\SignInAction::class,function () use ($container){
+    $hash = $container->get(\Aleksandr\Hash\HashInterface::class);
+    $validator = $container->get('validator');
+    return new \Aleksandr\Action\SignInAction($hash, $validator);
 });
