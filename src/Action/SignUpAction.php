@@ -38,6 +38,7 @@ class SignUpAction
                 $user->login = $user_params['login'];
                 $user->password = $this->hash->hash($user_params['pass']);
                 $user->save();
+                header('Location: ' . BASE_URL);
             }
         }
         return view('sign-up', ['errors' => $this->errors]);

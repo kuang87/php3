@@ -10,5 +10,10 @@
         <li>{{ $post->content }}</li>
     </ul>
     <p>Category: {{ $post->category->name }}</p>
+    <p>Tags:
+        @foreach($post->tags as $tag)
+            #{{ $tag->name }}
+        @endforeach
+        </p>
     <p class="like"><a href="{{BASE_URL. 'posts/' . $post->id . '/like'}}">Мне нравится</a></p>
 @endsection

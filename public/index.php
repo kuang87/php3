@@ -19,10 +19,13 @@ if ($action = $matcher->match($serverRequest)){
         $serverRequest = $serverRequest->withAttribute($name, $attribute);
     }
 
-    //var_dump($container);
-    //exit;
+    if ($container->has($action->handler)){
 
-    $action = new $action->handler;
+        $action = $container->get($action->handler);
+    }
+    else{
+        $action = new $action->handler;
+    }
 
     $response = new \GuzzleHttp\Psr7\Response();
     $response->getBody()->write(call_user_func($action, $serverRequest));
