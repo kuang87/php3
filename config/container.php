@@ -29,8 +29,8 @@ $container->set(\Aleksandr\Action\SignUpAction::class, function () use ($contain
     return new \Aleksandr\Action\SignUpAction($hash, $validator);
 });
 
-$container->set(\Aleksandr\Action\SignInAction::class,function () use ($container){
-    $hash = $container->get(\Aleksandr\Hash\HashInterface::class);
-    $validator = $container->get('validator');
-    return new \Aleksandr\Action\SignInAction($hash, $validator);
+$container->set(\Aleksandr\Action\RandomUserAction::class,function (){
+    //$adapter = new \Aleksandr\Service\Adapter\RandomMeUserAdapter();
+    $adapter = new \Aleksandr\Service\Adapter\KielD01RandomUserAdapter(new \KielD01\RandomUser\RandomUser('1.1'));
+    return new \Aleksandr\Action\RandomUserAction($adapter);
 });

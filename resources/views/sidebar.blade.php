@@ -4,6 +4,7 @@
     <ul>
         <li><a href="{{BASE_URL}}users">Пользователи</a></li>
         <li><a href="{{BASE_URL}}posts">Статьи</a></li>
+        <li><a href="{{BASE_URL}}random-user">Cлучайные пользователи</a>
         <li><a href="{{BASE_URL}}categories">Категории</a>
         <ul id="categories">
         @foreach(Aleksandr\Model\Category::all() as $cat_name)
