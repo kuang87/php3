@@ -17,9 +17,7 @@ class RandomUserAction
 
     public function __invoke()
     {
-        $user = $this->user->create();
-
-        return view('random-user', ['user' => $user]);
-
+        $users = $this->user->create(5);
+        return view('random-user', ['users' => $users]);
     }
 }

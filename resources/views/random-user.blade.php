@@ -4,10 +4,16 @@
 
 @section('content')
 
-    <p>Random User</p>
-    @foreach($user as $key => $value)
-        <ul>
-            <li>{{ $key . ': ' . $value }}</li>
+    <p>Random Users</p>
+    @foreach($users as $user)
+        <ul class="random_user">
+        @foreach($user as $key => $value)
+            @if($key == 'image')
+                <img src="{{$value}}">
+            @else
+                <li>{{ $key . ': ' . $value }}</li>
+            @endif
+        @endforeach
         </ul>
     @endforeach
 

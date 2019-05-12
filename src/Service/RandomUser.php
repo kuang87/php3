@@ -15,8 +15,8 @@ class RandomUser
         $this->user = $user;
     }
 
-    public function create()
+    public function create(int $count = 1)
     {
-        return  $this->user->generate();
+        return  $this->user->generate($count);
     }
 }

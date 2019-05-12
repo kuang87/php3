@@ -108,6 +108,9 @@
 .like{
     text-align: right;
 }
+.random_user{
+    display: inline-block;
+}
 #footer{
     height:80px;
     background-color: rgb(135, 136, 139);

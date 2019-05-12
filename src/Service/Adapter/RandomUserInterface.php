@@ -6,5 +6,5 @@ namespace Aleksandr\Service\Adapter;
 
 interface RandomUserInterface
 {
-    public function generate();
+    public function generate(int $count);
 }
