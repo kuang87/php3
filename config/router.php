@@ -15,4 +15,6 @@ $router->post('sign-up.post', '/sign-up', Aleksandr\Action\SignUpAction::class);
 $router->get('sign-in.get', '/sign-in', Aleksandr\Action\SignInAction::class);
 $router->post('sign-in.post', '/sign-in', Aleksandr\Action\SignInAction::class);
 $router->get('post.like', '/posts/{id}/like', Aleksandr\Action\PostLikeAction::class);
+$router->get('post.edit', '/posts/edit/{id}', Aleksandr\Action\PostEditAction::class);
+$router->post('post.save', '/posts/edit/{id}', Aleksandr\Action\PostEditAction::class);
 $router->get('user.rand', '/random-user', Aleksandr\Action\RandomUserAction::class);
