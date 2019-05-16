@@ -29,6 +29,12 @@ $container->set(\Aleksandr\Action\SignUpAction::class, function () use ($contain
     return new \Aleksandr\Action\SignUpAction($hash, $validator);
 });
 
+$container->set(\Aleksandr\Action\SignInAction::class, function () use ($container){
+    $hash = $container->get(\Aleksandr\Hash\HashInterface::class);
+    $validator = $container->get('validator');
+    return new \Aleksandr\Action\SignInAction($hash, $validator);
+});
+
 $container->set(\Aleksandr\Action\PostEditAction::class, function () use ($container){
     $validator = $container->get('validator');
     return new \Aleksandr\Action\PostEditAction($validator);
