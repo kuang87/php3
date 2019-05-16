@@ -16,4 +16,6 @@
         @endforeach
         </p>
     <p class="like"><a href="{{BASE_URL. 'posts/' . $post->id . '/like'}}">Мне нравится</a></p>
+
+    <p><a href="{{BASE_URL . 'posts/edit/' . $post->id}}">Редактировать</a></p>
 @endsection
