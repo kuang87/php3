@@ -18,7 +18,13 @@
             @endforeach
         @endif
         Пароль <input type="password" name="password"><br>
-        <button>Войти</button>
+
+        @if($errors->has('auth'))
+            @foreach($errors->get('auth') as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        @endif
+            <button>Войти</button>
     </form>
     <br>
 @endsection

@@ -5,7 +5,7 @@ namespace Aleksandr\Action;
 
 
 use Aleksandr\Hash\HashInterface;
-use Aleksandr\Model\User;
+use Aleksandr\Service\UserAuthentication;
 use GuzzleHttp\Psr7\ServerRequest;
 use Illuminate\Support\MessageBag;
 use Illuminate\Validation\ValidationException;
@@ -25,6 +25,10 @@ class SignInAction
     {
         $errors = new MessageBag();
 
+        if (isset($request->getQueryParams()['out'])){
+            UserAuthentication::logout();
+        }
+
         if ($request->getMethod() === 'POST'){
             $user_data = $request->getParsedBody();
 
@@ -34,13 +38,8 @@ class SignInAction
                     'password' => ['required', 'min:6'],
                 ]);
 
-                $login = $user_data['login'];
-                $password = $user_data['password'];
-
-                $user = User::where('login', $login)->first();
-
-                if (!empty($user) && $this->hash->verify($password, $user->password)){
-                    header('Location: ' . BASE_URL);
+                if (UserAuthentication::login($user_data, $this->hash) === false){
+                    $errors->add('auth', 'User is not find');
                 }
             } catch (ValidationException $exception){
                 $errors = $exception->validator->errors();

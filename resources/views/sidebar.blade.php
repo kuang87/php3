@@ -15,7 +15,11 @@
     </ul>
 </div>
 <div id="sign-in">
-    <a href="{{BASE_URL}}sign-up">Зарегистрироваться</a><br>
-    <a href="{{BASE_URL}}sign-in">Войти</a>
+    @if(\Aleksandr\Service\UserAuthentication::check())
+        <a href="{{BASE_URL}}sign-in?out">Выход</a>
+    @else
+        <a href="{{BASE_URL}}sign-up">Зарегистрироваться</a><br>
+        <a href="{{BASE_URL}}sign-in">Войти</a>
+    @endif
 </div>
 </div>
