@@ -36,6 +36,7 @@ class PostEditAction
                 $post->title = $post_data['title'];
                 $post->content = $post_data['content'];
                 $post->author = 1;
+                $post->category_id = $post_data['postcategory'];
                 $post->save();
                 header('Location: ' . BASE_URL . 'posts');
 
