@@ -107,6 +107,14 @@
 }
 .like{
     text-align: right;
+    font-family: Calibri;
+}
+.like > a{
+    border: 1px solid darkblue;
+    text-decoration: none;
+}
+.like img{
+    height: 15px;
 }
 .random_user{
     display: inline-block;
